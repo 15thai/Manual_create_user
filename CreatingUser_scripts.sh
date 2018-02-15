@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Running Creating User Script"
-echo "User will be created under /qmi_home folder"
+echo "User will be created /path/to/folder"
 
 
 read -n 1 -r -p "Press any key to continue..."
@@ -21,18 +21,18 @@ while true; do
 		read Username
 		echo "You are creating a new user name: $Username";
 
-		cmd="cd /qmi_home/"
-		cmda="sudo mkdir /qmi_home/$Username"
+		cmd="cd /path/to/folder"
+		cmda="sudo mkdir /path/to/folder/$Username"
 		cmd1="sudo gedit /etc/passwd /etc/shadow"
 		cmd3="sudo vigr"
-		cmd4a="cd /qmi_home/$Username"
+		cmd4a="cd /path/to/folder/$Username"
 		cmd4="sudo cp -r /etc/skel/* ."
 		cmd5="sudo chown -R $Username.stbb ."
 		cmd5a="sudo chmod -R go=u,go-w ."
 		cmd5b="sudo chmod go= ."
-		cmd5c="sudo chmod -R 755 /qmi_home/$Username"
-		cmdLS="ls -alrt /qmi_home"
-		cmd7="sudo cp ../irfanogo/.cshrc* ."
+		cmd5c="sudo chmod -R 755 /path/to/folder/$Username"
+		cmdLS="ls -alrt /path/to/folder"
+		cmd7="sudo cp ../<reference_user>/.cshrc* ."
 
 		echo "Editing passwd and shadow file - Caution" 
 
